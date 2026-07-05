@@ -1,0 +1,53 @@
+{
+  "name": "simple-shipping-calculator-skill",
+  "version": "1.0.0",
+  "description": "Calculate shipping rates and delivery timelines based on package dimensions, weight, destination, and selected service level.",
+  "author": "alphaparkinc",
+  "category": "logistics",
+  "tags": [
+    "shipping",
+    "calculator",
+    "delivery",
+    "logistics",
+    "e-commerce"
+  ],
+  "inputs": {
+    "destination_zip": {
+      "type": "string",
+      "description": "Target postal/ZIP code."
+    },
+    "weight_lbs": {
+      "type": "number",
+      "description": "Package weight in pounds."
+    },
+    "dimensions": {
+      "type": "object",
+      "description": "Optional dimension: {length, width, height} in inches."
+    },
+    "service_level": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "expedited",
+        "overnight"
+      ],
+      "description": "Shipping speed service level."
+    }
+  },
+  "outputs": {
+    "shipping_cost": {
+      "type": "number",
+      "description": "Calculated shipping cost in USD."
+    },
+    "estimated_days": {
+      "type": "integer",
+      "description": "Estimated business days for delivery."
+    },
+    "carrier": {
+      "type": "string",
+      "description": "Assigned shipping carrier."
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
